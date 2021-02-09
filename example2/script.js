@@ -5,7 +5,7 @@ import { Rhino3dmLoader } from 'https://cdn.jsdelivr.net/npm/three@0.124.0/examp
 
 // declare variables to store scene, camera, and renderer
 let scene, camera, renderer
-const model = 'Rhino_Logo.3dm'
+const model = 'Unit2.3dm'
 
 // call functions
 init()
@@ -21,7 +21,7 @@ function init () {
     scene = new THREE.Scene()
     scene.background = new THREE.Color(1,1,1)
     camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 )
-    camera.position.y = - 30
+    camera.position.y = - 10
 
     // create the renderer and add it to the html
     renderer = new THREE.WebGLRenderer( { antialias: true } )
@@ -43,7 +43,7 @@ function init () {
     loader.load( model, function ( object ) {
 
         // uncomment to hide spinner when model loads
-        // document.getElementById('loader').remove()
+        document.getElementById('loader').remove()
         scene.add( object )
 
     } )
